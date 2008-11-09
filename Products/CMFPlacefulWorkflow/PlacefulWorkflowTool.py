@@ -43,7 +43,6 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFCore.utils import UniqueObject
 from Products.CMFCore.permissions import ManagePortal
 from Products.CMFCore.permissions import View
-from Products.CMFPlone.migrations.migration_util import safeEditProperty
 from Products.CMFCore.utils import registerToolInterface
 from Products.CMFCore.utils import _checkPermission
 
@@ -64,6 +63,15 @@ def addPlacefulWorkflowTool(self,REQUEST={}):
     getattr(self, id)._post_init()
     if REQUEST:
         return REQUEST.RESPONSE.redirect(self.absolute_url() + '/manage_main')
+
+
+def safeEditProperty(obj, key, value, data_type='string'):
+    """ An add or edit function, surprisingly useful :) """
+    if obj.hasProperty(key):
+        obj._updateProperty(key, value)
+    else:
+        obj._setProperty(key, value, data_type)
+
 
 class PlacefulWorkflowTool(UniqueObject, Folder, IFAwareObjectManager):
     """
