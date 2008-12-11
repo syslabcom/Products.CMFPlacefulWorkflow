@@ -1,5 +1,8 @@
-trunk (2008-11-06)
+trunk (unreleased)
 ==================
+
+- Define wtool inside the prefs_workflow_policy_mapping template.
+  [hannosch]
 
 - Copied safeEditProperty from CMFPlone.migration_util to avoid a dependency.
   [hannosch]
