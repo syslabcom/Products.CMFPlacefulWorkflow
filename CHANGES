@@ -1,6 +1,10 @@
 trunk (unreleased)
 ==================
 
+- Declare package dependencies and fixed deprecation warnings for use
+  of Globals.
+  [hannosch]
+
 - Define wtool inside the prefs_workflow_policy_mapping template.
   [hannosch]
 

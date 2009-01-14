@@ -20,15 +20,21 @@ setup(name='Products.CMFPlacefulWorkflow',
       namespace_packages=['Products'],
       include_package_data=True,
       zip_safe=False,
+      extras_require=dict(
+        test=[
+            'zope.testing',
+            'Products.PloneTestCase',
+        ]
+      ),
       install_requires=[
           'setuptools',
           'zope.component',
-          'zope.interface',
           'zope.i18nmessageid',
-          'Products.CMFCore',
+          'zope.interface',
           'Plone',
+          'Products.CMFCore',
           'Products.GenericSetup',
-          'zope.testing',
-          'Products.PloneTestCase',
+          # 'Acquisition',
+          # 'Zope2',
       ],
       )

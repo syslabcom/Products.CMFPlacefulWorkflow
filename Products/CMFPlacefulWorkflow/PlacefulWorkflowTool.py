@@ -31,8 +31,8 @@ from AccessControl import Unauthorized
 from OFS.Folder import Folder
 from OFS.ObjectManager import IFAwareObjectManager
 from AccessControl import ClassSecurityInfo
-from Globals import InitializeClass
-from Globals import package_home
+from App.class_init import InitializeClass
+from App.Common import package_home
 
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
 

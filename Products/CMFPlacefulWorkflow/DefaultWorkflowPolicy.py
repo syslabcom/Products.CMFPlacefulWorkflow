@@ -28,7 +28,8 @@ from os.path import join as path_join
 
 from AccessControl import ClassSecurityInfo
 from AccessControl.requestmethod import postonly
-from Globals import InitializeClass, PersistentMapping
+from App.class_init import InitializeClass
+from Persistence import PersistentMapping
 from Acquisition import aq_base
 
 from Products.PageTemplates.PageTemplateFile import PageTemplateFile
