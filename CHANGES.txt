@@ -1,5 +1,11 @@
-trunk (unreleased)
-==================
+Changelog
+=========
+
+2.0 (unreleased)
+----------------
+
+- Cleaned up package and metadata.
+  [hannosch]
 
 - Declare package dependencies and fixed deprecation warnings for use
   of Globals.
@@ -13,7 +19,7 @@ trunk (unreleased)
 
 
 1.4.0 (2008-11-05)
-==================
+------------------
 
 - Port evolutions from the 1.3 maintenance branch (old style product).
   [encolpe]
@@ -31,7 +37,7 @@ trunk (unreleased)
 
 
 1.3.2 (2008-06-30)
-==================
+------------------
 
 - Fixed bad metadata.xml.
   [encolpe]

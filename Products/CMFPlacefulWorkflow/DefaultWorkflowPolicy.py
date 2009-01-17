@@ -23,8 +23,9 @@ __version__ = "$Revision: 62540 $"
 # $Id: DefaultWorkflowPolicy.py 62540 2008-04-12 07:50:01Z encolpe $
 __docformat__ = 'restructuredtext'
 
-import logging
 from os.path import join as path_join
+
+from zope.interface import implements
 
 from AccessControl import ClassSecurityInfo
 from AccessControl.requestmethod import postonly
@@ -49,7 +50,7 @@ _MARKER = '_MARKER'
 
 class DefaultWorkflowPolicyDefinition(SimpleItemWithProperties):
 
-    __implements__ = IWorkflowPolicyDefinition
+    implements(IWorkflowPolicyDefinition)
 
     meta_type = 'WorkflowPolicy'
     id = 'default_workflow_policy'

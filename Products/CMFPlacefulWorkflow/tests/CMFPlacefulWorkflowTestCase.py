@@ -82,9 +82,4 @@ ZopeTestCase.installProduct('CMFPlacefulWorkflow')
 # Setup Plone site
 PloneTestCase.setupPloneSite(id='plone', products=[
     'CMFPlacefulWorkflow',
-    ], extension_profiles=[
-    'Products.CMFPlone:testfixture',
     ])
-
-app = ZopeTestCase.app()
-ZopeTestCase.close(app)

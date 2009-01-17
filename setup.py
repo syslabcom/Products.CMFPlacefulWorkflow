@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
-version = '1.4.0'
+version = '2.0'
 
 setup(name='Products.CMFPlacefulWorkflow',
       version=version,
       description="Workflow policies for CMF and Plone",
       long_description=open("README.txt").read() + "\n" +
-                       open("CHANGES").read(),
+                       open("CHANGES.txt").read(),
       classifiers=[
         "Framework :: Plone",
         "Programming Language :: Python",
@@ -14,7 +14,7 @@ setup(name='Products.CMFPlacefulWorkflow',
       keywords='CMF Plone Zope2 workflow',
       author='Ingeniweb',
       author_email='support@ingeniweb.com',
-      url='http://svn.plone.org/svn/collective/Products.CMFPlacefulWorkflow',
+      url='http://pypi.python.org/pypi/Products.CMFPlacefulWorkflow',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['Products'],
@@ -34,7 +34,7 @@ setup(name='Products.CMFPlacefulWorkflow',
           'Plone',
           'Products.CMFCore',
           'Products.GenericSetup',
-          # 'Acquisition',
-          # 'Zope2',
+          'Acquisition',
+          'Zope2',
       ],
       )

@@ -30,8 +30,6 @@ import WorkflowPolicyConfig
 from AccessControl import ModuleSecurityInfo
 from Products.CMFCore import utils, DirectoryView
 
-install_globals = globals()          # Used only in the Extensions/Install.py script
-
 tools = (PlacefulWorkflowTool.PlacefulWorkflowTool, )
 
 DirectoryView.registerDirectory('skins', globals())
@@ -65,12 +63,6 @@ def initialize(context):
 ModuleSecurityInfo('Products.CMFPlacefulWorkflow').declarePublic('CMFPlacefulWorkflowMessageFactory')
 
 # Import "CMFPlacefulWorkflowMessageFactory as _" to create messages
-# Zope 3.1-style messagefactory module
-# BBB: Zope 2.8 / Zope X3.0
-try:
-    from zope.i18nmessageid import MessageFactory
-except ImportError:
-    from messagefactory_ import CMFPlacefulWorkflowMessageFactory
-else:
-    CMFPlacefulWorkflowMessageFactory = MessageFactory('cmfplacefulworkflow')
+from zope.i18nmessageid import MessageFactory
+CMFPlacefulWorkflowMessageFactory = MessageFactory('cmfplacefulworkflow')
 

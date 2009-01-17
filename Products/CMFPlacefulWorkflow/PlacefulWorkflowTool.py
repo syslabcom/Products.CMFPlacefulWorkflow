@@ -47,7 +47,6 @@ from Products.CMFCore.utils import registerToolInterface
 from Products.CMFCore.utils import _checkPermission
 
 from Products.CMFCore.interfaces import ISiteRoot
-from Products.CMFPlone.interfaces import IPloneSiteRoot
 from interfaces import IPlacefulWorkflowTool
 
 WorkflowPolicyConfig_id = ".wf_policy_config"
@@ -213,7 +212,7 @@ class PlacefulWorkflowTool(UniqueObject, Folder, IFAwareObjectManager):
     def getWorkflowPolicyConfig(self, ob):
         """ Return a local workflow configuration if it exist
         """
-        if ISiteRoot.providedBy(ob) or IPloneSiteRoot.providedBy(ob):
+        if ISiteRoot.providedBy(ob):
             # Site root use portal_workflow tool as local policy
             return None
         if not _checkPermission(ManagePortal, ob):

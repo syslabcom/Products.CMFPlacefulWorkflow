@@ -5,21 +5,21 @@
    i18n_domain="cmfplacefulworkflow">
 
   <adapter
-     factory=".exportimport.workflow_policies.PlacefulWorkflowXMLAdapter"
+     factory=".workflow_policies.PlacefulWorkflowXMLAdapter"
      provides="Products.GenericSetup.interfaces.IBody"
-     for=".interfaces.IPlacefulWorkflowTool
+     for="Products.CMFPlacefulWorkflow.interfaces.IPlacefulWorkflowTool
           Products.GenericSetup.interfaces.ISetupEnviron"
      />
 
   <adapter
-     factory=".exportimport.workflow_policies.WorkflowPoliciesXMLAdapter"
+     factory=".workflow_policies.WorkflowPoliciesXMLAdapter"
      provides="Products.GenericSetup.interfaces.IBody"
-     for=".interfaces.IWorkflowPolicyDefinition
+     for="Products.CMFPlacefulWorkflow.interfaces.IWorkflowPolicyDefinition
           Products.GenericSetup.interfaces.ISetupEnviron"
      />
 
   <five:registerClass
-     class=".DefaultWorkflowPolicy.DefaultWorkflowPolicyDefinition"
+     class="Products.CMFPlacefulWorkflow.DefaultWorkflowPolicy.DefaultWorkflowPolicyDefinition"
      meta_type="WorkflowPolicy"
      permission="cmf.ManagePortal"
      />
@@ -28,7 +28,7 @@
      name="placeful_workflow" 
      title="Placeful Workflow Policies"
      description="Import placeful workflow policies."
-     handler="Products.CMFPlacefulWorkflow.exportimport.importWorkflowPolicies">
+     handler=".workflow_policies.importWorkflowPolicies">
     <depends name="workflow"/>
   </genericsetup:importStep>
 
@@ -36,7 +36,7 @@
      name="portal_placeful_workflow" 
      title="Placeful Workflow Policies"
      description="Export placeful workflow policies."
-     handler="Products.CMFPlacefulWorkflow.exportimport.exportWorkflowPolicies"
+     handler=".workflow_policies.exportWorkflowPolicies"
      />
 
   <genericsetup:importStep
