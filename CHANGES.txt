@@ -4,6 +4,10 @@ Changelog
 2.0 (unreleased)
 ----------------
 
+- Adjust import location for the IWorkflowChain interface and default adapter
+  to plone.app.workflow.
+  [hannosch]
+
 - Cleaned up package and metadata.
   [hannosch]
 

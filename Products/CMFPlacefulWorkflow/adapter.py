@@ -20,6 +20,9 @@ __version__ = "$Revision: $"
 # $Id: $
 __docformat__ = 'restructuredtext'
 
+from plone.app.workflow.interfaces import IWorkflowChain
+from plone.app.workflow.workflowchain import ToolWorkflowChain
+
 from zope.interface import Interface, implementer
 from zope.component import adapter
 
@@ -27,8 +30,6 @@ from Products.CMFPlacefulWorkflow.PlacefulWorkflowTool import WorkflowPolicyConf
 from Products.CMFPlacefulWorkflow.interfaces import IPlacefulMarker
 from Acquisition import aq_base, aq_parent, aq_inner
 from Products.CMFCore.utils import getToolByName
-from Products.CMFPlone.interfaces import IWorkflowChain
-from Products.CMFPlone.workflow import ToolWorkflowChain
 
 @adapter(Interface, IPlacefulMarker)
 @implementer(IWorkflowChain)
