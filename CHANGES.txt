@@ -4,6 +4,9 @@ Changelog
 2.0 (unreleased)
 ----------------
 
+- Avoid test dependency on quick installer.
+  [hannosch]
+
 - Adjust import location for the IWorkflowChain interface and default adapter
   to plone.app.workflow.
   [hannosch]

@@ -24,13 +24,11 @@ __version__ = "$Revision: 61119 $"
 __docformat__ = 'restructuredtext'
 
 
-import transaction
 from Testing import ZopeTestCase
 from zExceptions import Forbidden
 from Products.PloneTestCase import PloneTestCase
 
 from Products.CMFPlacefulWorkflow.PlacefulWorkflowTool import WorkflowPolicyConfig_id
-from Products.CMFPlacefulWorkflow.interfaces import IPlacefulMarker
 from CMFPlacefulWorkflowTestCase import CMFPlacefulWorkflowTestCase
 
 try:
@@ -57,10 +55,6 @@ class TestPlacefulWorkflow(CMFPlacefulWorkflowTestCase):
         #self.failUnless(id in self.portal.Members.objectIds())
         return member
 
-    def installation(self, productName):
-        self.qi = self.portal.portal_quickinstaller
-        self.qi.installProduct(productName)
-
     def setupSecurityContext(self,):
         self.logout()
         self.loginAsPortalOwner()
@@ -70,7 +64,6 @@ class TestPlacefulWorkflow(CMFPlacefulWorkflowTestCase):
         self.user3 = self.createMember('user3', 'abcd4', 'abc@domain.tld')
 
         self.folder = self.portal.portal_membership.getHomeFolder('user1')
-        self.installation('CMFPlacefulWorkflow')
         self.logout()
 
     def afterSetUp(self,):
@@ -84,40 +77,10 @@ class TestPlacefulWorkflow(CMFPlacefulWorkflowTestCase):
         self.membershipTool = getToolByName(self.portal, 'portal_membership')
         self.memberdataTool = getToolByName(self.portal, 'portal_memberdata')
 
+        self.setupSecurityContext()
         self.portal_placeful_workflow = getToolByName(self.portal, 'portal_placeful_workflow')
 
-        self.setupSecurityContext()
-
         self.login('user1')
-        #self.createPolicy()
-
-    def createArticle(self, ):
-        """
-        Create new policy
-        """
-        # Content creation
-        self.contentId = 'myPolicy'
-
-        # XXX
-
-    def test_marker_applied_and_unapplied(self):
-        """
-        Check that the IPlacefulMarker is applied to the workflow tool by
-        the install, and removed by the uninstall.
-        """
-        self.failUnless(IPlacefulMarker.providedBy(self.workflow))
-        self.loginAsPortalOwner()
-        self.qi.uninstallProducts(['CMFPlacefulWorkflow'])
-        self.failIf(IPlacefulMarker.providedBy(self.workflow))
-        self.qi.installProduct('CMFPlacefulWorkflow')
-        self.failUnless(IPlacefulMarker.providedBy(self.workflow))
-
-    def test_reinstall(self):
-        """
-        Test if upgrade is going the good way
-        """
-        self.qi = self.portal.portal_quickinstaller
-        self.qi.installProduct('CMFPlacefulWorkflow', reinstall=True)
 
     def test_prefs_workflow_policy_mapping_set_PostOnly(self):
         """

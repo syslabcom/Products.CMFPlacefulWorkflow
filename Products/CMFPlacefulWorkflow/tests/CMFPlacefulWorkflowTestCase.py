@@ -47,6 +47,8 @@ class CMFPlacefulWorkflowTestCase(PloneTestCase.PloneTestCase):
     def _setup(self):
         PloneTestCase.PloneTestCase._setup(self)
         self.app.REQUEST['SESSION'] = self.Session()
+        self.portal.portal_setup.runAllImportStepsFromProfile(
+            'profile-Products.CMFPlacefulWorkflow:CMFPlacefulWorkflow')
 
     def beforeTearDown(self):
         # logout
@@ -80,6 +82,4 @@ class CMFPlacefulWorkflowFunctionalTestCase(
 ZopeTestCase.installProduct('CMFPlacefulWorkflow')
 
 # Setup Plone site
-PloneTestCase.setupPloneSite(id='plone', products=[
-    'CMFPlacefulWorkflow',
-    ])
+PloneTestCase.setupPloneSite(id='plone')
