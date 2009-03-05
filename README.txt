@@ -1,5 +1,5 @@
 Overview
-========
+--------
 
 Placeful Workflow is a Plone product that allows you to define workflow
 policies that define content type to workflow mappings that can be applied

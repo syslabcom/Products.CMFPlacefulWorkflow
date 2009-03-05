@@ -14,6 +14,24 @@ Changelog
 - Cleaned up package and metadata.
   [hannosch]
 
+1.4.2 (2009-03-05)
+------------------
+
+- The `Cancel` button on the local workflow configuration screen was saving
+  data as much as the `Save` button. Now it actually cancels the operation.
+  [hannosch]
+
+- Made sure you cannot set a workflow configuration on a non-folderish item
+  in the site root. The actual configuration would end up on the site root.
+  [hannosch]
+
+- Change the local workflow configuration screen to not be shown for the
+  site root, even if you accidentally type in the wrong URL.
+  [hannosch]
+
+1.4.1 (2009-01-17)
+------------------
+
 - Declare package dependencies and fixed deprecation warnings for use
   of Globals.
   [hannosch]
@@ -23,7 +41,6 @@ Changelog
 
 - Copied safeEditProperty from CMFPlone.migration_util to avoid a dependency.
   [hannosch]
-
 
 1.4.0 (2008-11-05)
 ------------------
