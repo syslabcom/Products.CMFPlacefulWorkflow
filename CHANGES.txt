@@ -14,6 +14,12 @@ Changelog
 - Cleaned up package and metadata.
   [hannosch]
 
+1.4.3 (unreleased)
+------------------
+
+- Removed settings of the portal_skins tool itself from skins.xml.
+  Specifically, allow_any was set to False, which bit me.  [maurits]
+
 1.4.2 (2009-03-05)
 ------------------
 
