@@ -4,6 +4,10 @@ Changelog
 2.0 (unreleased)
 ----------------
 
+- Noted profile dependency on ATContentTypes and changed profile version to
+  comply to the simple integer scheme.
+  [hannosch]
+
 - Added the z3c.autoinclude entry point so this package is automatically loaded
   on Plone 3.3 and above.
   [hannosch]
