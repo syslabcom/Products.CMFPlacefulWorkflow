@@ -4,6 +4,10 @@ Changelog
 2.0 (unreleased)
 ----------------
 
+- Removed the `document_byline` from the placeful_workflow_configuration
+  template.
+  [hannosch]
+
 - Noted profile dependency on ATContentTypes and changed profile version to
   comply to the simple integer scheme.
   [hannosch]
