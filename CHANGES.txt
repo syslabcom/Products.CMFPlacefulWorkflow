@@ -30,7 +30,11 @@ Changelog
 ------------------
 
 - Removed settings of the portal_skins tool itself from skins.xml.
-  Specifically, allow_any was set to False, which bit me.  [maurits]
+  Specifically, allow_any was set to False, which bit me.
+  [maurits]
+
+- Made worflow policies translatable in prefs_workflow_localpolicies_form.
+  [vincentfretin]
 
 1.4.2 (2009-03-05)
 ------------------
